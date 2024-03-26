@@ -54,4 +54,5 @@ public class Hand {
         }
         System.out.println("");
     }
+    //这行注释测试一下能不能正常修改文件
 }
