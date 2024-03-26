@@ -41,3 +41,68 @@ void PrintCardSet(CARD *cardlist) {
 		iterator++;
 	}
 }
+void SortByPoint(CARDSET set){//按点数排序
+	
+}
+
+void SortBySuit(CARDSET set){ //按花色排序
+	
+}
+void DrawCards(CARDSET curCardSet,CARDSET handcards,int nums){//抽牌
+
+}
+
+CARDSET CardType(CARDSET set){//判断牌型，第0个元素存储牌型，返回所有记分的牌
+
+}
+int CountingPoints(CARDSET set){//基于牌型记分
+	
+}
+CARDSET DuplicateSet(CARDSET set){
+	//复制卡组，返回头指针
+}
+CARDSET PlayOrDiscard(CARDSET handcard){
+	
+}
+int GetTarget(int round,int effect){
+	
+}
+int Blind(CARDSET currentCardSet,int plays,int discards,int handcards,int round,int blindtype){
+//盲注，运行阶段  卡组               出牌数    弃牌数       手牌上限      回合      盲注类型
+	CARDSET cardheap = DuplicateSet(currentCardSet);
+	CARD handcard[handcards];
+	CARDSET cardsplayedd;
+	int leftplays = plays;
+	int leftdiscards = discards;
+	int cardsplayed = handcards;
+	int TtlPts = 0;
+	int roundPts = 0;
+	int Target = GetTarget(round,blindtype);
+	while(1){
+		DrawCards(cardheap,handcard,cardsplayed);//致命问题：弃牌出牌？需要解决！！！
+		cardsplayedd = PlayOrDiscard(handcard);
+		cardsplayed = cardsplayedd[0].points;
+		roundPts = CountingPoints(cardsplayedd);
+		TtlPts+=roundPts;
+		if(TtlPts>=Target){
+			return 1;//success
+		}else if(leftplays == 0){
+			return 0;//game over!
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
