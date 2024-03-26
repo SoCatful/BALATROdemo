@@ -11,21 +11,40 @@
 //} CARD;
 
 CARD *StandardCards() {
-	CARD AllcardList[53];
-	AllcardList[0].points   = 52;//first node: store the length of card set
-	AllcardList[0].serienum =  0;
-	AllcardList[0].suit     =  0;
-	AllcardList[0].effects  =  0;
-	for (int i = 0; i++ ; i < 4) {
-		for (int j = 1; j++ ; j < 14) {
+	//	CARD AllcardList[53];
+//	AllcardList[0].points   = 52;//first node: store the length of card set
+//	AllcardList[0].serienum =  0;
+//	AllcardList[0].suit     =  0;
+//	AllcardList[0].effects  =  0;
+//	for (int i = 0; i++ ; i < 4) {
+//		for (int j = 1; j++ ; j < 14) {
+//			int serienum = 13 * i + j;
+//			AllcardList[serienum].points = j;       //points 1~13
+//			AllcardList[serienum].suit   = i + 1;   //suits  1~4
+//			AllcardList[serienum].serienum = 13 * i + j; //serienum 1~52
+//			AllcardList[serienum].effects = 0;
+//		}
+//	}
+//	return AllcardList;
+	CARD *allcards = (CARD *)malloc(sizeof(CARD) * 53); // 分配内存
+	if (allcards == NULL) {
+		printf("Memory allocation failed!\n");
+		exit(1);
+	}
+	allcards[0].points = 52; // first node: store the length of card set
+	allcards[0].serienum = 0;
+	allcards[0].suit = 0;
+	allcards[0].effects = 0;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 1; j < 14; j++) {
 			int serienum = 13 * i + j;
-			AllcardList[serienum].points = j;       //points 1~13
-			AllcardList[serienum].suit   = i + 1;   //suits  1~4
-			AllcardList[serienum].serienum = 13 * i + j; //serienum 1~52
-			AllcardList[serienum].effects = 0;
+			allcards[serienum].points = j; // points 1&#126;13
+			allcards[serienum].suit = i + 1; // suits 1&#126;4
+			allcards[serienum].serienum = 13 * i + j; // serienum 1&#126;52
+			allcards[serienum].effects = 0;
 		}
 	}
-	return AllcardList;
+	return allcards;
 }
 
 void PrintCardSet(CARD *cardlist) {
