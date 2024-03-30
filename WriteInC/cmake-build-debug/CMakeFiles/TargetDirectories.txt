@@ -1,0 +1,3 @@
+C:/Users/tzhca/catProg/BALATRO/BALATROdemo/WriteInC/cmake-build-debug/CMakeFiles/untitled1.dir
+C:/Users/tzhca/catProg/BALATRO/BALATROdemo/WriteInC/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tzhca/catProg/BALATRO/BALATROdemo/WriteInC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
