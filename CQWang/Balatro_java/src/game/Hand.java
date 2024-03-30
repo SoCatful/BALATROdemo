@@ -7,11 +7,9 @@ public class Hand {
     private ArrayList<Card> cards;
     private ArrayList<Card> playedCards;
 
-
     public Hand(Deck deck) {
         cards = new ArrayList<>();
         playedCards = new ArrayList<>();
-        drawHands(deck, 8);
     }
 
     public void drawHands(Deck deck, int numCardsToDraw) {
@@ -28,11 +26,13 @@ public class Hand {
         for (int index : cardIndices) {
             int adjustedIndex = index - 1; // 将用户输入的序号转换为数组索引
             if (adjustedIndex >= 0 && adjustedIndex < cards.size()) {
-                cardsToRemove.add(cards.get(adjustedIndex));
+                //cardsToRemove.add(cards.get(adjustedIndex));
+                Card card = cards.get(adjustedIndex);
+                cardsToRemove.add(card);
+                playedCards.add(card);
             }
         }
         cards.removeAll(cardsToRemove);
-        playedCards.addAll(cardsToRemove);
     }
 
     public void refillHand(Deck deck) {
@@ -43,6 +43,7 @@ public class Hand {
     public ArrayList<Card> getCards() {
         return cards;
     }
+
     public ArrayList<Card> getPlayedCards() {
         return playedCards;
     }
@@ -55,4 +56,10 @@ public class Hand {
         System.out.println("");
     }
     //这行注释测试一下能不能正常修改文件
+    public void clearPlayedCards(){
+        playedCards.removeAll(cards);
+    }
+    public int getPlayedCardsNum(){
+        return playedCards.size();
+    }
 }

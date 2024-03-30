@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Deck {
     private ArrayList<Card> cards;
+    private ArrayList<Card> savedState;
 
     public Deck() {
         cards = new ArrayList<>();
@@ -24,6 +25,12 @@ public class Deck {
                 cards.add(new Card(point, value, suit, effect));
             }
         }
+    }
+    public void saveState(){
+        savedState = new ArrayList<>(cards);
+    }
+    public void rollBack(){
+        cards = new ArrayList<>(savedState);
     }
     public ArrayList<Card> getCards() {
         return cards;
