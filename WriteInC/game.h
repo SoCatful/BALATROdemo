@@ -11,7 +11,7 @@ typedef struct card {
 	int serienum;
 } CARD;
 
-typedef CARD* CARDSET;
+typedef CARD* CARDSET;//下标为0的元素花色为零，用于存储牌组的牌数
 
 CARD *StandardCards();
 void PrintCardSet(CARD * );

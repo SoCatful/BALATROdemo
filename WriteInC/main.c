@@ -16,6 +16,7 @@ menu（）�?
 
 int main() {
     CARD *allcards = StandardCards();
+    SortBySuit(allcards);
     PrintCardSet(allcards);
 //    srand((unsigned)time(NULL));
 //    int input = 0;
